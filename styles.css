@@ -1,0 +1,254 @@
+* {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.contenedor {
+  width: 100;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 80px auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas:
+    "header header"
+    "menu contenido";
+  transition: all 0.3s ease;
+}
+
+.contenedor.active {
+  grid-template-columns: 200px auto;
+}
+
+/*---------------Header-----------------*/
+
+.header {
+  grid-area: header;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-content: space-between;
+  grid-gap: 20px;
+  background-color: #111111;
+  grid-template-areas: "logo busquedas iconos";
+}
+
+/* Contenedor (Literalmente lo mas importante xD)*/
+.contenedor-logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-logo .boton-menu {
+  border: none;
+  padding: 10px;
+  background-color: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  background-color: #111111;
+}
+
+.contenedor-logo .boton-menu:hover {
+  background: #e7e7e7;
+}
+
+.contenedor-logo .logo .fas {
+  background: #ff0000;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-size: 8px;
+  color: #fff;
+  position: relative;
+  top: -3px;
+  margin-right: 4px;
+}
+
+.contenedor-logo .logo {
+  font-family: "Bebas neue", "cursive";
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+
+/* Barra de busqueda */
+
+.header .barra-busqueda {
+  grid-area: busquedas;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+} 
+
+.header .barra-busqueda .boton-barra {
+  background-color: #0f0f0f;
+}
+
+.header .botones-header .avatar {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
+.header .botones-header .avatar img {
+  vertical-align: top;
+  width: 90%;
+  border-radius: 100px;
+}
+
+.header .barra-busqueda input {
+  min-width: 60%;
+  padding: 0 15px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid rgba(12, 12, 12, 0.8);
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 35px;
+  background-color: #111111;
+}
+
+.header .barra-busqueda button {
+  height: 35px;
+  border: 1px solid rgb(15, 15, 15);
+  border-left: none;
+  color: #545454;
+  background-color: #f8f8f8;
+  padding: 0 25px;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.header .barra-busqueda button :hover {
+  background-color: #e7e7e7;
+}
+
+/*botones header */
+.header .botones-header {
+  grid-area: iconos;
+  display: flex;
+  align-items: center;
+}
+
+.header .barra-busqueda .fa {
+  border-radius: 35px;
+}
+
+.header .botones-header button {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  padding: 7px 12px;
+  border-radius: 100px;
+  color: #828282;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.header .botones-header button :hover {
+  background-color: #e7e7e7;
+}
+
+/* Bordes de microfono y iconos */
+/*---------------Menu lateral-----------------*/
+
+.menu-lateral {
+  grid-area: menu;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 15px 35px;
+  color: #FFFFFF;
+  /*  min-width: 800px;*/
+}
+
+.menu-lateral a :hover {
+  background-color: #858080;
+}
+
+.menu-lateral a.active {
+  background: #111111;
+  font-weight: bold;
+}
+
+.menu-lateral a i {
+  color: #606060;
+  margin-right: 15px;
+  width: 15px;
+  text-align: center;
+}
+
+.menu-lateral a.active i {
+  color: red;
+  margin-right: 15px;
+  width: 15px;
+  text-align: center;
+}
+
+.menu-lateral hr {
+  margin: 100 px 0;
+  border: 1px solid #333232;
+}
+
+/*---------------Contenido principal---------------- */
+.main {
+  grid-area: contenido;
+  background-color: #121212;
+  padding: 15px;
+}
+
+.main .titulo {
+  margin-bottom: 10px;
+  background-color: #111111;
+}
+.main .grid-videos {
+  display: grid;
+  grid-gap: 100px 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main .grid-videos .videos {
+  width: 100%;
+}
+
+.main .grid-videos .img {
+  width: 100%;
+}
+
+.main .categoria{
+display: flex;
+justify-content: space-between;
+height: 25px;
+padding: none;
+}
+.main .categoria .boton-categoria{
+background-color: rgb(75, 71, 71);
+border-radius: 35px;
+padding-top: 0px;
+padding-right: 10px;
+padding-bottom: 1px;
+padding-left: 10px;
+}
+.main .categoria .boton-categoria :hover{
+  background-color: #e5e5e5;
+}
